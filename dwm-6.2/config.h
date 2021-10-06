@@ -24,6 +24,14 @@ static const char *colors[][3]      = {
 	[SchemeHid]  = { col_cyan,  col_gray1, col_cyan  },
 };
 
+static const char *const autostart[] = {
+    "/usr/bin/nitrogen", "--restore", NULL,
+    "/usr/bin/picom", "-b", NULL,
+    "/usr/bin/xscreensaver", "--no-splash", NULL,
+    "/bin/sh", "-c", "$HOME/.dwm/dwm-bar/dwm_bar.sh", "&", NULL,
+    NULL
+};
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
