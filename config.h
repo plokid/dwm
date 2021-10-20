@@ -89,15 +89,17 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "rofi", "-show", "run", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *flameshotcmd[]  = { "flameshot", "gui", NULL };
+static const char *trayercmd[]  = { "/bin/sh", "-c", "$HOME/.dwm/scripts/trayer.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ SUPER|ShiftMask,              XK_s,      spawn,          {.v = flameshotcmd } },
+	{ SUPER,                        XK_t,      spawn,          {.v = trayercmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ SUPER,                        XK_Return, rotatestack,    {.i = +1 } },
-	{ SUPER|ShiftMask,              XK_Return,  rotatestack,    {.i = -1 } },
+	{ SUPER|ShiftMask,              XK_Return,  rotatestack,   {.i = -1 } },
     { MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
     { MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
     { MODKEY|ShiftMask,             XK_j,      focusstackhid,  {.i = +1 } },
