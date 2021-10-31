@@ -1,3 +1,6 @@
 [submodule "dwm-bar"]
 	path = dwm-bar
 	url = git@github.com:plokid/dwm-bar.git
+[submodule "polybar-dwm-module"]
+	path = polybar-dwm-module
+	url = git@github.com:plokid/polybar-dwm-module.git
