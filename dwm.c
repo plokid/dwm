@@ -33,6 +33,7 @@
 #include <sys/epoll.h>
 #include <X11/cursorfont.h>
 #include <X11/keysym.h>
+#include <X11/XF86keysym.h>
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
 #include <X11/Xproto.h>
@@ -1567,9 +1568,9 @@ rotatestack(const Arg *arg)
 {
 	Client *c = NULL, *f;
 
-	if (!selmon->sel)
+	/*if (!selmon->sel)
 		return;
-	f = selmon->sel;
+	f = selmon->sel;*/
 	if (arg->i > 0) {
 		for (c = nexttiled(selmon->clients); c && nexttiled(c->next); c = nexttiled(c->next));
 		if (c){
